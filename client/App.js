@@ -2,6 +2,10 @@ import React, { Component} from 'react';
 import { Page } from '@shopify/polaris';
 import { EmbeddedApp } from '@shopify/polaris/embedded';
 import Chart from './components/Chart';
+import Table from './components/Table';
+
+import data from './data/tableData.json';
+
 import './App.css';
 
 import ApiConsole from './components/ApiConsole'
@@ -60,6 +64,9 @@ class App extends Component {
         >
           <ApiConsole />
           <Chart chartData={this.state.chartData} />
+          <Table
+            data={data}
+          />
         </Page>
       </EmbeddedApp>
     );

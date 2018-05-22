@@ -1,26 +1,40 @@
-import React, {Component} from 'react';
-import {BootstrapTable, TableHeaderColumn} from 'react-bootstrap-table';
+import React from 'react';
 
-class Table extends Component{
-  constructor(props){
-    super(props);
-    this.state = {
-      tableData:props.tableData
-    }
+export default function Table(props){
+  return(
+    <div>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Name</th>
+          <th>Symbol</th>
+          <th>
+            Price
+          </th>
+          <th>%/hour</th>
+          <th>%/day</th>
+          <th>%/week</th>
+        </tr>
+      </thead>
 
+      <tbody>
+        {
+          props.data.map(row => (
+            <tr>
+              <td>{row.rank}</td>
+              <td>{row.name}</td>
+              <td>{row.symbol}</td>
+              <td>{row.price_usd}</td>
+              <td>{row.percent_change_1h}</td>
+              <td>{row.percent_change_24h}</td>
+              <td>{row.percent_change_7d}</td>
+            </tr>
+          ))
+        }
+      </tbody>
+    </table>
+    
+    </div>
+  )
 }
-
-render(){
-      return(
-        <div className="table">
-           <BootstrapTable data={this.state.tableData}>
-               <TableHeaderColumn dataField='id' isKey>Product ID</TableHeaderColumn>
-               <TableHeaderColumn dataField='name'>Product Name</TableHeaderColumn>
-               <TableHeaderColumn dataField='price'>Product Price</TableHeaderColumn>
-             </BootstrapTable>
-          </div>
-      )
-  }
-}
-
-export default Table;
