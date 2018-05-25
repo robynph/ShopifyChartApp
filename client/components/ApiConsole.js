@@ -5,8 +5,6 @@ import { Layout, Stack, Card, TextField, Button, DisplayText } from '@shopify/po
 import ObjectInspector from 'react-object-inspector';
 import { updatePath, updateParams, sendRequest } from '../actions';
 
-import {Line} from 'react-chartjs-2';
-
 import VerbPicker from './VerbPicker';
 
 class ApiConsole extends Component {
@@ -14,7 +12,6 @@ class ApiConsole extends Component {
     return (
       <Layout sectioned>
         { this.renderText() }
-        { this.renderChart() }
         { this.renderForm() }
         { this.renderResponse() }
       </Layout>
@@ -26,65 +23,6 @@ class ApiConsole extends Component {
       <Layout.Section>
           <DisplayText element="h3" size="small">Good evening, Dominic.</DisplayText>
       </Layout.Section>
-    )
-  }
-
-  renderChart() {
-    const data = {
-          labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
-          datasets: [
-            {
-              label: 'My First dataset',
-              fill: false,
-              lineTension: 0.1,
-              backgroundColor: '#7C0A02',
-              borderColor: '#7C0A02',
-              borderCapStyle: 'butt',
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'miter',
-              pointBorderColor: '#7C0A02',
-              pointBackgroundColor: '#fff',
-              pointBorderWidth: 1,
-              pointHoverRadius: 5,
-              pointHoverBackgroundColor: 'r#7C0A02',
-              pointHoverBorderColor: '#7C0A02',
-              pointHoverBorderWidth: 2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              data: [65, 59, 80, 81, 56, 55, 40]
-            },
-            {
-              label: 'My Second dataset',
-              fill: false,
-              lineTension: 0.1,
-              backgroundColor: 'rgba(75,192,192,0.4)',
-              borderColor: 'rgba(75,192,192,1)',
-              borderCapStyle: 'butt',
-              borderDash: [],
-              borderDashOffset: 0.0,
-              borderJoinStyle: 'miter',
-              pointBorderColor: 'rgba(75,192,192,1)',
-              pointBackgroundColor: '#fff',
-              pointBorderWidth: 1,
-              pointHoverRadius: 5,
-              pointHoverBackgroundColor: 'rgba(75,192,192,1)',
-              pointHoverBorderColor: 'rgba(220,220,220,1)',
-              pointHoverBorderWidth: 2,
-              pointRadius: 1,
-              pointHitRadius: 10,
-              data: [25, 69, 5, 61, 16, 15, 80]
-            }
-          ]
-        };
-
-    return (
-      <div>
-      <Layout.Section>
-          <DisplayText element="h2" size="small">Line Example</DisplayText>
-          <Line data={data} />
-      </Layout.Section>
-      </div>
     )
   }
 

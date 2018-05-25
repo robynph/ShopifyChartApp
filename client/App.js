@@ -3,8 +3,11 @@ import { Page } from '@shopify/polaris';
 import { EmbeddedApp } from '@shopify/polaris/embedded';
 import Chart from './components/Chart';
 import Table from './components/Table';
+import axios from 'axios';
 
 import data from './data/tableData.json';
+
+import RedhioTable from './components/RedhioTable';
 
 import './App.css';
 
@@ -14,15 +17,26 @@ class App extends Component {
   constructor(){
     super();
     this.state = {
-      chartData:{}
+      chartData:{},
+      tableData:[]
     }
   }
 
   componentWillMount(){
     this.getChartData();
+    this.getTableData();
   }
 
-  getChartData(){
+  getTableData(){
+       axios.get('http://api.redh.io/admin/users.json')
+             .then(res => {
+               const tableData = res.data;
+               this.setState({ tableData });
+               console.log(tableData);
+             })
+ }
+
+getChartData(){
     //Ajax xalls here
     this.setState({
       chartData:{
@@ -30,6 +44,7 @@ class App extends Component {
           datasets:[
             {
               label:'Population',
+              fill: false,
               data:[
                 1175893,
                 1820589,
@@ -46,6 +61,26 @@ class App extends Component {
                 '#330033',
                 '#4A148C'
               ]
+            },
+            {
+                label:'NewPopulation',
+                fill: false,
+                data:[
+                  175893,
+                  820589,
+                  503060,
+                  1060519,
+                  4061042,
+                  2950072
+                ],
+                backgroundColor:[
+                  '#6666CC',
+                  '#009933',
+                  '#0000FF',
+                  '#CC0066',
+                  '#330033',
+                  '#4A148C'
+                ]
             }
           ]
         }
@@ -63,10 +98,9 @@ class App extends Component {
           primaryAction={{ content: 'Add something' }}
         >
           <ApiConsole />
+          <RedhioTable tableData={this.state.tableData} />
           <Chart chartData={this.state.chartData} />
-          <Table
-            data={data}
-          />
+
         </Page>
       </EmbeddedApp>
     );
