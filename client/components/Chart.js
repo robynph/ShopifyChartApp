@@ -28,35 +28,35 @@ render(){
             }}
             />
 
-            <Line
-         data={this.state.chartData}
-         options={{
-           title:{
-             display:true,
-             text:'Largest Cities In Mass',
-             fontSize:25
-           },
-           legend:{
-             display:true,
-             position:'right'
-           }
-         }}
-       />
+          <Line
+           data={this.state.chartData}
+           options={{
+             title:{
+               display:true,
+               text:'Largest Cities In Mass',
+               fontSize:25
+             },
+             legend:{
+               display:true,
+               position:'right'
+             }
+           }}
+          />
 
-       <Pie
-         data={this.state.chartData}
-         options={{
-           title:{
-             display:true,
-             text:'Largest Cities In Mass',
-             fontSize:25
-           },
-           legend:{
-             display:true,
-             position:'right'
-           }
-         }}
-       />
+        <Pie
+           data={this.state.chartData}
+           options={{
+             title:{
+               display:true,
+               text:'Largest Cities In Mass',
+               fontSize:25
+             },
+             legend:{
+               display:true,
+               position:'right'
+             }
+           }}
+        />
         </div>
       )
   }

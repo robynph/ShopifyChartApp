@@ -3,7 +3,7 @@ import { Page } from '@shopify/polaris';
 import { EmbeddedApp } from '@shopify/polaris/embedded';
 import Chart from './components/Chart';
 import Table from './components/Table';
-import axios from 'axios';
+
 
 import data from './data/tableData.json';
 
@@ -18,23 +18,37 @@ class App extends Component {
     super();
     this.state = {
       chartData:{},
-      tableData:[]
+      //tableData:[]
     }
   }
 
   componentWillMount(){
     this.getChartData();
-    this.getTableData();
+    //this.getTableData();
   }
 
-  getTableData(){
-       axios.get('http://api.redh.io/admin/users.json')
-             .then(res => {
-               const tableData = res.data;
-               this.setState({ tableData });
-               console.log(tableData);
-             })
- }
+  // getTableData(){
+  //      axios.get('https://api.myjson.com/bins/l5pw3')
+  //            .then(res => {
+  //              const {keywordData} = response.data;
+  //
+  //              const tableData = {
+  //                labels: keywordData.map(k => k.category),
+  //                datasets: [
+  //                  {
+  //                    label: 'spectra',
+  //                    fill: false,
+  //                    data: keywordData.map(d => d.noOfSpectra),
+  //                    backgroundColor:'#4A148C',
+  //                  }
+  //                ]
+  //              }
+  //
+  //              this.setState({ tableData });
+  //              console.log(this.state.tableData);
+  //            });
+  //             }
+
 
 getChartData(){
     //Ajax xalls here
@@ -98,12 +112,14 @@ getChartData(){
           primaryAction={{ content: 'Add something' }}
         >
           <ApiConsole />
-          <RedhioTable tableData={this.state.tableData} />
+          <RedhioTable />
           <Chart chartData={this.state.chartData} />
 
         </Page>
       </EmbeddedApp>
     );
+
+
   }
 }
 
