@@ -21,7 +21,7 @@ class ApiConsole extends Component {
   renderText() {
     return(
       <Layout.Section>
-          <DisplayText element="h3" size="small">Good evening, Dominic.</DisplayText>
+          <DisplayText element="h3" size="small">Hello, Please submit your Data.</DisplayText>
       </Layout.Section>
     )
   }

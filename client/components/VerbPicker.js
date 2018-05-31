@@ -35,7 +35,7 @@ class VerbPicker extends Component {
     return (
       <Popover active={this.state.opened} activator={button} onClose={() => this.close()}>
         <ActionList
-          items={['GET', 'POST', 'PUT', 'DELETE'].map(verb => {
+          items={['POST'].map(verb => {
             return { content: verb, onAction: () => this.onAction(verb) }
           })}
         />
