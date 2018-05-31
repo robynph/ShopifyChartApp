@@ -26,9 +26,9 @@ class App extends Component {
     return (
       <EmbeddedApp shopOrigin={shopOrigin} apiKey={apiKey}>
         <Page
-          title="My application"
+          title="Pricing Application"
           breadcrumbs={[{ content: 'Home', url: '/foo' }]}
-          primaryAction={{ content: 'Add something' }}
+          primaryAction={{ content: 'Contact Us' }}
         >
           <ApiConsole />
           <PricingPanel />
