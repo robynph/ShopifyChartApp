@@ -11,10 +11,12 @@ class Chart extends Component {
       chartData: {},
     }
 
+this.getResult = this.getResult.bind(this);
+
+
 }
 
-componentDidMount() {
-
+getResult() {
   axios('https://api.myjson.com/bins/a226m')
 
     .then((response) => {
@@ -53,6 +55,10 @@ componentDidMount() {
     });
 }
 
+componentDidMount() {
+  this.getResult();
+}
+
 
 render(){
 
@@ -78,6 +84,5 @@ render(){
     );
   }
 }
-
 
 export default Chart;

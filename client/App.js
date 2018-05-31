@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import { Page } from '@shopify/polaris';
+import { Page, Layout, Card } from '@shopify/polaris';
 import { EmbeddedApp } from '@shopify/polaris/embedded';
 import ApiConsole from './components/ApiConsole'
 
@@ -7,6 +7,9 @@ import Chart from './components/Chart';
 import Table from './components/Table';
 import data from './data/tableData.json';
 import PricingPanel from './components/PricingPanel';
+{/* import NewList from './components/NewList';*/}
+{/* import NewTable from './components/NewTable';*/}
+
 
 import './App.css';
 
@@ -30,10 +33,20 @@ class App extends Component {
           breadcrumbs={[{ content: 'Home', url: '/foo' }]}
           primaryAction={{ content: 'Contact Us' }}
         >
-          <ApiConsole />
-          <PricingPanel />
-          <Chart />
-          <Table data={data} />
+              <ApiConsole />
+
+                {/* <NewList /> */}
+                {/* <NewTable /> */}
+
+                <PricingPanel />
+               <Chart />
+
+              <Layout.Section>
+                <Card>
+                  <Table data={data} />
+                </Card>
+              </Layout.Section>
+        
         </Page>
       </EmbeddedApp>
     );

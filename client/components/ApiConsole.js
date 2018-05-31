@@ -11,18 +11,9 @@ class ApiConsole extends Component {
   render() {
     return (
       <Layout sectioned>
-        { this.renderText() }
         { this.renderForm() }
         { this.renderResponse() }
       </Layout>
-    )
-  }
-
-  renderText() {
-    return(
-      <Layout.Section>
-          <DisplayText element="h3" size="small">Hello, Please submit your Data.</DisplayText>
-      </Layout.Section>
     )
   }
 
