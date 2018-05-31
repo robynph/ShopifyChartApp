@@ -34,7 +34,7 @@ export default function Table(props){
         }
       </tbody>
     </table>
-    
+
     </div>
   )
 }
