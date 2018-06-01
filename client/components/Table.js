@@ -20,8 +20,8 @@ export default function Table(props){
 
       <tbody>
         {
-          props.data.map(row => (
-            <tr>
+          props.data.map((row ,index)=> (
+            <tr key={index}>
               <td>{row.rank}</td>
               <td>{row.name}</td>
               <td>{row.symbol}</td>

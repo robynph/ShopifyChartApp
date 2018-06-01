@@ -1,10 +1,16 @@
 import React, { Component} from 'react';
-import { Avatar, TextStyle, Media, Layout, Stack, Card, TextField, Button, DisplayText, DataTable, ResourceList } from '@shopify/polaris';
+import {
+Page,
+Card,
+DataTable,
+ } from '@shopify/polaris';
 import axios from 'axios';
 
 
 class NewTable extends React.Component {
-
+  constructor(props) {
+  		super(props);
+  	}
 render(){
     const rows = [
        ['Emerald Silk Gown', '$875.00', 124689, 140, '$122,500.00'],

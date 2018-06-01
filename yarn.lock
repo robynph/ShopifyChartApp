@@ -57,23 +57,24 @@
     lodash "^4.17.4"
     lodash-decorators "^4.3.5"
 
-"@shopify/polaris@^1.14.2":
-  version "1.14.2"
-  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-1.14.2.tgz#1a3c0ac72b7bfda4a9c3893143133fe1aa87e028"
+"@shopify/polaris@^2.1.1":
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/@shopify/polaris/-/polaris-2.1.1.tgz#e520c7e51de090a239bc5475f7a367e5e301c149"
   dependencies:
     "@shopify/images" "^1.1.0"
     "@shopify/javascript-utilities" "^2.1.0"
     "@shopify/react-utilities" "2.0.0-beta.9"
     "@types/prop-types" "^15.5.2"
-    "@types/react" "^16.0.2"
-    "@types/react-dom" "^16.0.2"
-    "@types/react-transition-group" "^2.0.6"
+    "@types/react" "^16.3.5"
+    "@types/react-dom" "^16.0.4"
+    "@types/react-transition-group" "^2.0.7"
     babel-runtime "^6.23.0"
     core-js "^2.5.1"
-    hoist-non-react-statics "^2.3.1"
+    hoist-non-react-statics "^2.5.0"
     lodash "^4.17.4"
-    prop-types "^15.6.0"
-    react-transition-group "^2.2.1"
+    lodash-decorators "^4.3.5"
+    prop-types "^15.6.1"
+    react-transition-group "^2.3.0"
     tslib "^1.8.0"
 
 "@shopify/react-utilities@2.0.0-beta.9":
@@ -134,14 +135,20 @@
   version "15.5.3"
   resolved "https://registry.yarnpkg.com/@types/prop-types/-/prop-types-15.5.3.tgz#bef071852dca2a2dbb65fecdb7bfb30cedae2de2"
 
-"@types/react-dom@^16.0.2":
+"@types/react-dom@^16.0.4":
   version "16.0.5"
   resolved "https://registry.yarnpkg.com/@types/react-dom/-/react-dom-16.0.5.tgz#a757457662e3819409229e8f86795ff37b371f96"
   dependencies:
     "@types/node" "*"
     "@types/react" "*"
 
-"@types/react-transition-group@^2.0.6", "@types/react-transition-group@^2.0.8":
+"@types/react-transition-group@^2.0.7":
+  version "2.0.10"
+  resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-2.0.10.tgz#d8a44eaa865022b4c73140a449a16ede5b0fdf45"
+  dependencies:
+    "@types/react" "*"
+
+"@types/react-transition-group@^2.0.8":
   version "2.0.9"
   resolved "https://registry.yarnpkg.com/@types/react-transition-group/-/react-transition-group-2.0.9.tgz#ed6a71fb711e524345844defec2a861c1a222a03"
   dependencies:
@@ -150,6 +157,12 @@
 "@types/react@*", "@types/react@^16.0.10", "@types/react@^16.0.2":
   version "16.3.14"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-16.3.14.tgz#f90ac6834de172e13ecca430dcb6814744225d36"
+  dependencies:
+    csstype "^2.2.0"
+
+"@types/react@^16.3.5":
+  version "16.3.16"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-16.3.16.tgz#78fc44a90b45701f50c8a7008f733680ba51fc86"
   dependencies:
     csstype "^2.2.0"
 
@@ -5457,7 +5470,7 @@ react-stringify@^1.0.0:
   dependencies:
     "@macklinu/render-props" "^1.0.1"
 
-react-transition-group@^2.0.0, react-transition-group@^2.2.0, react-transition-group@^2.2.1:
+react-transition-group@^2.0.0, react-transition-group@^2.2.0, react-transition-group@^2.2.1, react-transition-group@^2.3.0:
   version "2.3.1"
   resolved "https://registry.yarnpkg.com/react-transition-group/-/react-transition-group-2.3.1.tgz#31d611b33e143a5e0f2d94c348e026a0f3b474b6"
   dependencies:

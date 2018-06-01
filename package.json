@@ -26,7 +26,7 @@
   ],
   "dependencies": {
     "@material-ui/core": "^1.0.0",
-    "@shopify/polaris": "^1.14.2",
+    "@shopify/polaris": "^2.1.1",
     "@shopify/shopify-express": "^1.0.0-alpha.7",
     "axios": "^0.18.0",
     "chalk": "^1.1.3",
