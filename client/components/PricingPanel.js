@@ -1,5 +1,5 @@
 import React, { Component} from 'react';
-import { Layout, Stack, Card, TextField, Button, DisplayText } from '@shopify/polaris';
+import { Layout, Stack, Card, TextField, Button, DisplayText, TextContainer, Heading } from '@shopify/polaris';
 import {Bar, Line, Pie} from 'react-chartjs-2';
 import axios from 'axios';
 
@@ -39,9 +39,15 @@ render(){
   return(
     <Layout.Section>
       <Card>
-        <DisplayText element="h2" size="medium">Model Results</DisplayText>
-        <DisplayText element="h3" size="small">CPU Time: {this.state.CPU_Time}</DisplayText>
-        <DisplayText element="h3" size="small">Response Time: {this.state.Response_Time}</DisplayText>
+        <TextContainer>
+          <Heading>Model Results</Heading>
+            <p>
+              CPU Time: {this.state.CPU_Time}
+            </p>
+            <p>
+              Response Time: {this.state.Response_Time}
+            </p>
+        </TextContainer>
       </Card>
     </Layout.Section>
     );

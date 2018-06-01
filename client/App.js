@@ -38,15 +38,10 @@ class App extends Component {
                 {/* <NewList /> */}
                 {/* <NewTable /> */}
 
-                <PricingPanel />
+              <PricingPanel />
                <Chart />
+              <Table data={data} />
 
-              <Layout.Section>
-                <Card>
-                  <Table data={data} />
-                </Card>
-              </Layout.Section>
-        
         </Page>
       </EmbeddedApp>
     );
