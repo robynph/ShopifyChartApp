@@ -13,41 +13,49 @@ class NewTable extends React.Component {
   	}
 render(){
     const rows = [
-       ['Emerald Silk Gown', '$875.00', 124689, 140, '$122,500.00'],
-       ['Mauve Cashmere Scarf', '$230.00', 124533, 83, '$19,090.00'],
-       [
-         'Navy Merino Wool Blazer with khaki chinos and yellow belt',
-         '$445.00',
-         124518,
-         32,
-         '$14,240.00',
-       ],
+       ['Gold Bezel Diamond Ring','$23,579', '$17,500', '-26%', '$1,387', '$1,750', '26%', '17', '10', '-70%'],
+       ['Gold Butterfly Diamond Ring','$10,132', '$49,000', '384%', '$2,533', '$2,450', '-3%', '4', '20', '80%'],
+       ['Gold Weave Diamond Ring','$56,250', '$38,525', '-32%', '$1,250', '$1,675', '34%', '45', '23', '-96%'],
      ];
 
      return (
-           <Page title="Sales by product">
-             <Card>
-               <DataTable
+
+           <Card title="Pricing Model Results"
+           primaryFooterAction={{content: 'Change Data'}}
+           >
+            <div>
+              <DataTable
                  columnContentTypes={[
                    'text',
                    'numeric',
                    'numeric',
                    'numeric',
                    'numeric',
+                   'numeric',
+                   'numeric',
+                   'numeric',
+                   'numeric',
+                   'numeric'
                  ]}
                  headings={[
                    'Product',
-                   'Price',
-                   'SKU Number',
-                   'Net quantity',
-                   'Net sales',
+                   'Old Sales',
+                   'New Sales',
+                   'Sales % Change',
+                   'Old Price',
+                   'New Price',
+                   'Price % Change',
+                   'Old Volume',
+                   'New Volume',
+                   'Volume % Change'
                  ]}
                  rows={rows}
-                 totals={['', '', '', 255, '$155,830.00']}
-                 footerContent={`Showing ${rows.length} of ${rows.length} results`}
+                 totals={['','$89,961','$105,025','17%','','','',66,53,'-24%']}
+                 footerContent={`Showing ${rows.length} of ${rows.length} products`}
                />
+              </div>
              </Card>
-           </Page>
+
     );
   }
 }

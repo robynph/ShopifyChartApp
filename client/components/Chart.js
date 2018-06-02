@@ -10,41 +10,31 @@ class Chart extends Component {
     this.state = {
       chartData: {},
     }
-
-this.getResult = this.getResult.bind(this);
-
-
 }
 
-getResult() {
-  axios('https://api.myjson.com/bins/a226m')
+componentDidMount() {
+  axios('https://api.myjson.com/bins/6w5vi')
 
     .then((response) => {
 
       const { keywordData } = response.data;
       //console.log(keywordData, response.data)
-      keywordData[0].response_data.V[0].data.reverse()
-      keywordData[0].response_data.V[1].data.reverse()
-      keywordData[0].response_data.V[2].data.reverse()
+      keywordData[0].response_data.V[0].data
+      keywordData[0].response_data.V[1].data
       console.log(keywordData[0].name   );
       const chartData = {
         labels: [1,2,3,4,5,6,7,8,9,10],
         datasets: [
           {
-            label: keywordData.map(k => k.response_data.V[0].label),
+            label: "Before Price Change",
             data: keywordData[0].response_data.V[0].data,
             fill: false,
             backgroundColor: 'red',
           },
           {
-            label: keywordData.map(k => k.response_data.V[1].label),
+            label: "After Price Change",
             data: keywordData[0].response_data.V[1].data,
             fill: false,
-            backgroundColor: 'green',
-          },            {
-            label: keywordData.map(k => k.response_data.V[2].label),
-            fill: false,
-            data: keywordData[0].response_data.V[2].data,
             backgroundColor: 'blue',
           }
         ]
@@ -55,31 +45,23 @@ getResult() {
     });
 }
 
-componentDidMount() {
-  this.getResult();
-}
-
-
 render(){
 
  return(
 
-      <div className="testchart">
+      <Card sectioned title='Projected Sales Over 10 Weeks' actions={[{content: 'Add Series'}]}>
+        <div>
         <Line
           data={this.state.chartData}
           options={{
-            title:{
-              display:true,
-              text:'Transactions per minute',
-              fontSize:25
-            },
-              legend:{
+               legend:{
                 display:true,
-                position:'right'
+                position:'bottom'
               }
           }}
           />
         </div>
+        </Card>
 
     );
   }
