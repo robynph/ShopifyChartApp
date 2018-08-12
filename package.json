@@ -5,7 +5,7 @@
   "scripts": {
     "prod": "yarn run clean && yarn run build && cross-env NODE_ENV=production yarn run start",
     "dev": "cross-env NODE_ENV=development yarn run start",
-    "start": "node app.js",
+    "start": "node App.js",
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js --progress --profile --colors",
     "clean": "rm -rf ./assets && mkdir ./assets",
     "pretty": "prettier --single-quote --trailing-comma es5 --write {client,bin,config,server}{/*,/**/*}.js",
