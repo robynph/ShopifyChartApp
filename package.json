@@ -10,7 +10,7 @@
     "clean": "rm -rf ./assets && mkdir ./assets",
     "pretty": "prettier --single-quote --trailing-comma es5 --write {client,bin,config,server}{/*,/**/*}.js",
     "precommit": "yarn run pretty",
-    "heroku-prebuild": "yarn install --production=false, NPM_CONFIG_PRODUCTION=false"
+    "heroku-prebuild": "NPM_CONFIG_PRODUCTION=false"
   },
   "engines": {
     "node": "8.11.2"
