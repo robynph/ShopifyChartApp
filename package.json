@@ -9,7 +9,8 @@
     "build": "cross-env NODE_ENV=production webpack --config ./config/webpack.config.js --progress --profile --colors",
     "clean": "rm -rf ./assets && mkdir ./assets",
     "pretty": "prettier --single-quote --trailing-comma es5 --write {client,bin,config,server}{/*,/**/*}.js",
-    "precommit": "yarn run pretty"
+    "precommit": "yarn run pretty",
+    "heroku-prebuild": "yarn install --production=false"
   },
   "engines": {
     "node": ">= 8.1.0"
